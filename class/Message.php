@@ -7,8 +7,8 @@ class Message extends dbHelp{
     }
     public function insertMessage($message){
         $messageCode = $this->checkMessageCode();
-        echo $messageCode;
         parent::insert('messageData',array('messageCode' => $messageCode,'messagebody' => $message));
+        echo $_SERVER['SERVER_NAME'].'?message='.$messageCode;
     }
     private function checkMessageCode(){
         $code = $this->generateMessageCode();
