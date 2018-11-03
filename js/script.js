@@ -13,17 +13,20 @@ const appendLink = (messageLink) => {
 form.addEventListener('submit', e =>{
     e.preventDefault();
     const text = document.querySelector('textarea').value;
+    const file = document.querySelector('[type=file]').files;
     if(text.length === 0) return;
     // console.log(text);
     const formData = new FormData();
     formData.append('text',text);
-    // console.log(formData);  
+    formData.append('file',file[0]);
+    for (var pair of formData.entries()) {
+        console.log(pair[0]+ ', ' + pair[1]['name']); 
+    }
     fetch(url,{
         method: 'POST',
         body: formData
-    }).then(response => {
-        return response.ok ? response.text() : false;
-    }).then(data => {
+    }).then(response => response.ok ? response.text() : false)
+    .then(data => {
         appendLink(data);
     })
 })
