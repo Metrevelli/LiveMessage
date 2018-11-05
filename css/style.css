@@ -3,9 +3,8 @@ html,body{
     height: 100%;
     background-color: azure;
     overflow: hidden;
-}
+}  
 .textarea{
-    xfont-family: 'Bad Script', cursive;
     font-family: 'Indie Flower', cursive;
     outline: none !important;
     width: 100%;
@@ -93,8 +92,6 @@ html,body{
 .anotherMessage{
     margin-top: 30px;
 }
-
-
 input[type=file] {
     border-radius: 10px;
     margin: 10px 0px 0px 0px;
@@ -106,18 +103,20 @@ input[type=file] {
     color:white;
     outline: none !important;
   }
-  
   input[type=file]:before {
     width: 180px;
     height: 50px;
     font-size: 18px;    
     line-height: 50px;
-    content: 'Select your background';
+    content: 'Select background img';
     display: inline-block;
     background: #baf2bd;
     padding: 0 10px;
     text-align: center;
     font-family: 'Pacifico', cursive;
+  }
+  input[name=music]:before{
+      content: "Select Music";
   }
   input[type=file]::-webkit-file-upload-button {
     visibility: hidden;

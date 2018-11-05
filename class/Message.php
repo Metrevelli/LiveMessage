@@ -13,8 +13,9 @@ class Message extends dbHelp{
 
         $messageData = $message;
         $backgroundImgExt = end(explode('.',$message['message_background']));
-        $messageData['message_background'] = $messageCode.'.'.$backgroundImgExt;
-
+        $musicExt = end(explode('.',$message['message_music']));
+        $messageData['message_background'] = $messageData['message_background'] ? $messageCode.'.'.$backgroundImgExt : '';
+        $messageData['message_music']  = $messageData['message_music'] ? $messageCode.'.'.$musicExt : '';
         parent::insert('messageData',array('messageCode' => $messageCode,'messagebody' => json_encode($messageData)));
         $this->messageCode = $messageCode;
         echo $_SERVER['SERVER_NAME'].'/livemessage/view.php?mc='.$messageCode;

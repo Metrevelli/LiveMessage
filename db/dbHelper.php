@@ -3,11 +3,11 @@ class dbHelp{
 	private $connect;
 	function __construct(){
 		try {
-	$this->connect = new PDO('mysql:host=localhost;dbname=livemessage;charset=utf8', 'root', '8zxrknec');
-	$this->connect->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+			$this->connect = new PDO('mysql:host=localhost;dbname=livemessage;charset=utf8', 'root', '8zxrknec');
+			$this->connect->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 		} catch (PDOException $e) {
-			    print "Error!: " . $e->getMessage() . "<br/>";
-    			die("Oops something went wrong!");
+			print "Error!: " . $e->getMessage() . "<br/>";
+			die("Oops something went wrong!");
 		}
 	}
 	function insert($table,$array){

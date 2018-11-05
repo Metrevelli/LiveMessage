@@ -13,12 +13,15 @@ const appendLink = (messageLink) => {
 form.addEventListener('submit', e =>{
     e.preventDefault();
     const text = document.querySelector('textarea').value;
-    const file = document.querySelector('[type=file]').files;
+    const image = document.querySelector('input[name=image]').files;
+    const music = document.querySelector('input[name=music]').files;
+    console.log(music);
     if(text.length === 0) return;
-    // console.log(text);
+    // console.log(text);  
     const formData = new FormData();
     formData.append('text',text);
-    formData.append('file',file[0]);
+    formData.append('image',image[0]);
+    formData.append('music',music[0]);
     for (var pair of formData.entries()) {
         console.log(pair[0]+ ', ' + pair[1]['name']); 
     }
@@ -28,5 +31,6 @@ form.addEventListener('submit', e =>{
     }).then(response => response.ok ? response.text() : false)
     .then(data => {
         appendLink(data);
+        console.log(data);
     })
 })

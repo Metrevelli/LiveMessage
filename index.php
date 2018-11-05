@@ -16,7 +16,8 @@
             <form method="POST" enctype="multipart/form-data">
                 <textarea id="text" name="text" class="textarea" spellcheck="false" placeholder="Your text goes here : )"></textarea>
                 <input class="action-button shadow animate yellow submit" type="submit" value="Create Message" name="submit">
-                <input type="file" name='file'>
+                <input type="file" name='image'>
+                <input type="file" name='music'>
             </form>
         </div>
         <script src="js/script.js"></script>
