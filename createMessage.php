@@ -30,7 +30,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $music->upload('music/',$message->getMessageCode());
         }
         if(!empty($_FILES['image'])){
-            $image = new File($_FILES['image'],['jpg', 'jpeg', 'png', 'gif'],209715);
+            $image = new File($_FILES['image'],['jpg', 'jpeg', 'png', 'gif'],15728640);
             $image->upload('background/',$message->getMessageCode());
         }
     }
